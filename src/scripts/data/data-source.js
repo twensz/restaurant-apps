@@ -1,25 +1,24 @@
-import data from "../../DATA.json";
-const restaurants = data.restaurants;
+import data from '../../DATA.json';
+
+const { restaurants } = data;
 
 class DataSource {
   static getAllRestaurant() {
     return restaurants;
   }
 
-  static sortRestaurantByName(mode = "asc") {
-    if (mode == "asc") {
+  static sortRestaurantByName(mode = 'asc') {
+    if (mode === 'asc') {
       return [...restaurants].sort((a, b) => a.name.localeCompare(b.name));
-    } else {
-      return [...restaurants].sort((a, b) => b.name.localeCompare(a.name));
     }
+    return [...restaurants].sort((a, b) => b.name.localeCompare(a.name));
   }
 
-  static sortRestaurantByRating(mode = "asc") {
-    if (mode == "asc") {
+  static sortRestaurantByRating(mode = 'asc') {
+    if (mode === 'asc') {
       return [...restaurants].sort((a, b) => b.rating - a.rating);
-    } else {
-      return [...restaurants].sort((a, b) => a.rating - b.rating);
     }
+    return [...restaurants].sort((a, b) => a.rating - b.rating);
   }
 }
 
