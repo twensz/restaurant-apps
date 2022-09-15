@@ -1,6 +1,7 @@
 import DataSource from "../data/data-source";
 
 const main = () => {
+  // Hamburger 
   const hamburgerElement = document.querySelector(".app-bar__menu");
   const navElement = document.querySelector(".nav");
   const closeNavElementArea = document.querySelectorAll(".hero, main");
@@ -16,11 +17,11 @@ const main = () => {
   hamburgerElement.addEventListener("click", toggleNavElement);
   closeNavElementArea.forEach((element) => element.addEventListener("click", closeNavElement));
 
-  // back to top 
+  // Back to Top
   const backToTopElement = document.querySelector(".back-to-top");
   backToTopElement.addEventListener("click", () => window.scrollTo(0, 0));
 
-  // restaurants
+  // Restaurants
   let restaurants = DataSource.getAllRestaurant();
 
   const restaurantListElement = document.querySelector(".resto__list");
