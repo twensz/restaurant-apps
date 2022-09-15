@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resto Point</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <a href="#main" class="skip-to-content">Skip to content</a>
+
+    <header class="app-bar">
+      <div class="app-bar__inner">
+        <h1 class="app-bar__brand"><a href="/"><i class="fa-solid fa-utensils"></i> Resto Point</a></h1>
+
+        <button id="menu" class="app-bar__menu">☰</button>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="/">Home</a></li>
+            <li class="nav__item"><a href="#">Favorites</a></li>
+            <li class="nav__item"><a href="https://github.com/twensz" target="_blank">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="hero__inner">
+        <h2 class="hero__title">Menampilkan restoran terbaik di penjuru indonesia</h2>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="resto">
+        <div class="resto__inner">
+          <h3 class="resto__title">All Restaurant</h3>
+          <div class="sort">
+            <div class="sort__inner">
+              <span class="sort__title">Sort by</span>
+              <select class="sort__input" id="sort">
+                <option class="sort__option" value="default">Default</option>
+                <option class="sort__option" value="alphabet-asc">Alphabet (A - Z)</option>
+                <option class="sort__option" value="alphabet-desc">Alphabet (Z - A)</option>
+                <option class="sort__option" value="rating-asc">Rating (High to Low)</option>
+                <option class="sort__option" value="rating-desc">Rating (Low to High)</option>
+              </select>
+            </div>
+          </div>
+          <div class="resto__list"></div>
+        </div>
+      </section>
+
+      <section class="todays-menu">
+        <div class="todays-menu__inner">
+          <h3 class="todays-menu__title">Resep masakan untuk hari ini</h3>
+          <article class="todays-menu__item">
+            <figure class="todays-menu__figure">
+              <img src="./images/menu/menu-1.jpg" alt="Nasi Di Piring Keramik Hitam
+              " />
+              <figcaption>Nasi Di Piring Keramik Hitam</figcaption>
+            </figure>
+            <div class="todays-menu__info">
+              <h4 class="todays-menu__name">Nasi Goreng by Kecap Bango</h4>
+              <div class="todays-menu__recipe">
+                <h5>Resep Masakan</h5>
+                <ul>
+                  <li>1 potong paha ayam atas bawah rebus, suwir ayamnya</li>
+                  <li>2 butir telur, kocok lepas</li>
+                  <li>150 gram udang tanpa kulit&nbsp;&nbsp;</li>
+                  <li>5 buah bakso sapi, potong-potong</li>
+                  <li>5 buah bakso ikan, potong-potong</li>
+                  <li>500 gram nasi putih&nbsp;</li>
+                  <li>2 sendok makan <strong>KECAP MANIS BANGO <br> </strong></li>
+                  <li>1 sendok teh garam&nbsp;</li>
+                  <li>1/2 sendok teh gula pasir</li>
+                  <li>1 batang daun bawang, diiris tipis&nbsp;</li>
+                  <li>1 1/2 sendok makan bawang goreng untuk taburan&nbsp;</li>
+                  <li>3 sendok makan minyak untuk menumis&nbsp;</li>
+                </ul>
+              </div>
+              <div class="todays-menu__instruction">
+                <h5>Cara Memasak</h5>
+                <ul>
+                  <li>Panaskan minyak. Tumis bumbu tumbuk kasar sampai harum. Sisihkan di pinggir wajan. Masukkan telur. Aduk sampai berbutir.</li>
+                  <li>Tambahkan&nbsp; ayam, udang, bakso. Aduk rata. Tambahkan nasi putih. Aduk- aduk. Masukkan <strong>KECAP MANIS BANGO</strong>, garam, dan gula pasir. Aduk&nbsp;sampai matang.</li>
+                  <li>Masukkan daun bawang. Aduk rata. Sajikan bersama telur ceplok dan taburan bawang merah goreng. &nbsp;</li>
+                  </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p>Copyright © 2022 - Resto Point</p>
+        <button type="button" class="back-to-top"> <span>&#8593</span> Back to top</button>
+      </div>
+    </footer>
+  </body>
+</html>

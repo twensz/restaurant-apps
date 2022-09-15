@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Montserrat:wght@500;600;700&display=swap");
+
+// Variables 
+$font-1: "Montserrat", sans-serif;
+$font-2: "ABeeZee", sans-serif;
+$color-1: #1e5128;
+$color-2: #fafafa; 
+$color-3: #444;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $color-2;
+  color: $color-3;
+  font-family: $font-2;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-1;
+  font-weight: 600;
+}
+button, input, a {
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+button, a {
+  &:hover {
+    opacity: .8;
+  }
+}
+
+/* 
+ *  SKIP TO CONTENT
+*/
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: $color-1;
+  color: $color-2;
+  padding: 20px;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+/* 
+ *  APP-BAR
+*/
+.app-bar {
+  .app-bar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding: 25px 0;
+  }
+  .app-bar__menu {
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .app-bar__brand a {
+    color: $color-1;
+    font-size: 1.8rem;
+
+    i {
+      margin-right: 10px;
+    }
+    &hover {
+      opacity: unset;
+    }
+  }
+}
+.nav {
+  display: none;
+
+  .nav__list {
+    display: flex;
+    column-gap: 50px;
+    list-style-type: none;
+  }
+
+  .nav__item a {
+    justify-content: center;
+  }
+}
+
+
+/* 
+ *  HERO
+*/
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(../public/images/heros/hero-image_3.jpg);
+  background-size: cover;
+  background-position: center;
+  color: $color-2;
+  min-height: 350px;
+
+  .hero__inner {
+    width: 90%;
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    max-width: 700px;
+  }
+  .hero__title {
+    padding: 20px;
+  }
+}
+
+
+/* 
+ *  MAIN
+*/
+main {
+  padding: 70px 0;
+}
+
+/* 
+ *  .RESTAURANT
+*/
+.sort {
+  margin-bottom: 20px;
+
+  .sort__title {
+    margin-right: 8px;
+  }
+  .sort__input, .sort__option {
+    padding: 5px 3px;  
+  }
+}
+
+.resto {
+  margin-bottom: 80px;
+
+  .resto__inner {
+    width: 90%;
+    margin: auto;
+  }
+  .resto__title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  .resto__list {
+    display: grid;
+    gap: 25px 15px;
+  }
+  .resto__item {
+    position: relative;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .resto__picture {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
+  .resto__info {
+    padding: 1.5rem 1.3rem;
+    padding-bottom: 2.2rem;
+  }
+  .resto__city {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    background-color: $color-3;
+    color: $color-2;
+    padding: 5px 15px;
+    border-radius: 0 3px 3px 0;
+  }
+  .resto__star {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .resto__star i {
+    color: #c6cc14;
+    margin-right: 7px;
+  }
+  .resto__name a {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  .resto__name a:hover {
+    opacity: 0.8;
+  }
+  .resto__description {
+    padding-right: 20px;
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+  }
+}
+
+/* 
+ *  TODAY'S MENU
+*/
+.todays-menu {
+  .todays-menu__inner {
+    width: 90%;
+    margin: auto;
+  } 
+
+  .todays-menu__title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .todays-menu__figure {
+    width: 100%;
+  }
+  .todays-menu__figure img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .todays-menu__figure figcaption {
+    text-align: center;
+    font-size: .85rem;
+    margin-top: 8px;
+  }
+  .todays-menu__info {
+    padding: 20px;
+
+    .todays-menu__name  {
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+    .todays-menu__recipe, .todays-menu__instruction {
+      border-top: 2px solid $color-3;
+      margin-top: 20px;
+    }
+    ul {
+      margin-left: 10px;
+    }
+    li {
+      margin-bottom: 5px;
+      font-size: 0.85rem;
+      line-height: 1.4rem;
+    }
+    h5 {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+  }
+}
+
+
+/* 
+ *  FOOTER
+*/
+.footer {
+  background-color: $color-1;
+  color: $color-2;
+  
+  .footer__inner {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .back-to-top {
+    background-color: transparent;
+    border: none;
+    span {
+      font-size: 1.1rem;
+      margin-right: 7px;
+    }
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .footer__inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .resto__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .app-bar__brand {
+    font-size: 1.5rem;
+  }
+  .app-bar__inner {
+    position: relative;
+  }
+  .app-bar__menu {
+    transition: 0.3s;
+  }
+
+  .nav {
+    display: block;
+    color: $color-2;
+    background-color: $color-1;
+    text-align: center;
+    border-radius: 3px;
+    padding: 40px 45px;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    -webkit-transform: translate(300px, 0);
+    transform: translate(300px, 0);
+    opacity: 0;
+    transition: transform 0.3s, opacity 1s;
+  }
+  .nav__list {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .open {
+    display: block;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  .close {
+    color: crimson;
+    transform: rotate(90deg);
+  }
+
+  .resto__description {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .app-bar__menu {
+    display: none;
+  }
+  .nav {
+    display: block;
+  }
+}
+@media screen and (min-width: 830px) {
+  .todays-menu__figure {
+    text-align: center;
+  }
+  .todays-menu__figure img {
+    max-height: 400px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .todays-menu__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .todays-menu__name {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .resto__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
