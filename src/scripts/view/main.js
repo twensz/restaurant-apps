@@ -1,24 +1,24 @@
 import DataSource from "../data/data-source";
 
 const main = () => {
-  // hamburger button
   const hamburgerElement = document.querySelector(".app-bar__menu");
   const navElement = document.querySelector(".nav");
-  hamburgerElement.addEventListener("click", function () {
+  const closeNavElementArea = document.querySelectorAll(".hero, main");
+  const toggleNavElement = () => {
     navElement.classList.toggle("open");
     hamburgerElement.classList.toggle("close");
-  });
-  document.querySelector(".hero").addEventListener("click", function () {
+  }
+  const closeNavElement = () => {
     navElement.classList.remove("open");
     hamburgerElement.classList.remove("close");
-  });
-  document.querySelector("main").addEventListener("click", function () {
-    navElement.classList.remove("open");
-    hamburgerElement.classList.remove("close");
-  });
+  }
 
-  // back to top button
-  document.querySelector(".back-to-top").addEventListener("click", function () {
+  hamburgerElement.addEventListener("click", toggleNavElement);
+  closeNavElementArea.forEach((element) => element.addEventListener("click", closeNavElement));
+
+  // back to top 
+  const backToTopElement = document.querySelector(".back-to-top");
+  backToTopElement.addEventListener("click", function () {
     window.scrollTo(0, 0);
   });
 
