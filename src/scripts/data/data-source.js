@@ -1,34 +1,24 @@
 import data from "../../DATA.json";
-const restaurant = data.restaurants;
+const restaurants = data.restaurants;
 
 class DataSource {
   static getAllRestaurant() {
-    return restaurant;
+    return restaurants;
   }
 
   static sortRestaurantByName(mode = "asc") {
     if (mode == "asc") {
-      return [...restaurant].sort((a, b) => a.name.localeCompare(b.name));
+      return [...restaurants].sort((a, b) => a.name.localeCompare(b.name));
     } else {
-      return [...restaurant].sort((a, b) => b.name.localeCompare(a.name));
+      return [...restaurants].sort((a, b) => b.name.localeCompare(a.name));
     }
   }
 
   static sortRestaurantByRating(mode = "asc") {
     if (mode == "asc") {
-      return [...restaurant].sort((a, b) => b.rating - a.rating);
+      return [...restaurants].sort((a, b) => b.rating - a.rating);
     } else {
-      return [...restaurant].sort((a, b) => a.rating - b.rating);
-    }
-  }
-
-  static async getRecipe() {
-    try {
-      const response = await fetch("www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata");
-      const responseJson = await response.json();
-      console.log(responseJson);
-    } catch (error) {
-      console.error(error);
+      return [...restaurants].sort((a, b) => a.rating - b.rating);
     }
   }
 }
