@@ -18,63 +18,57 @@ const main = () => {
 
   // back to top 
   const backToTopElement = document.querySelector(".back-to-top");
-  backToTopElement.addEventListener("click", function () {
-    window.scrollTo(0, 0);
-  });
+  backToTopElement.addEventListener("click", () => window.scrollTo(0, 0));
 
-  // resto data
-  let restaurant = DataSource.sortRestaurantByName("desc");
+  // restaurants
+  let restaurants = DataSource.getAllRestaurant();
 
-  const restoListElement = document.querySelector(".resto__list");
-  function renderRestoItem() {
-    restoListElement.innerHTML = ``;
+  const restaurantListElement = document.querySelector(".resto__list");
+  const renderRestoItem = () => {
+    restaurantListElement.innerHTML = ``;
 
-    restaurant.forEach((resto) => {
-      const restoItemELement = document.createElement("article");
-      restoItemELement.classList.add("resto__item");
+    restaurants.forEach((restaurant) => {
+      const restaurantItemElement = document.createElement("article");
+      restaurantItemElement.classList.add("resto__item");
 
-      restoItemELement.innerHTML = `
-      <img src="${resto.pictureId}" alt="Restaurant ${resto.name} yang berada di kota ${resto.city}" class="resto__picture" />
+      restaurantItemElement.innerHTML = `
+      <img src="${restaurant.pictureId}" alt="Restaurant ${restaurant.name} yang berada di kota ${restaurant.city}" class="resto__picture" />
       <div class="resto__info">
         <div class="resto__star">
-          <i class="fa-solid fa-star"></i>${resto.rating}
+          <i class="fa-solid fa-star"></i>${restaurant.rating}
         </div>
-        <div class="resto__city">${resto.city}</div>
-        <h4 class="resto__name"> <a href="#">${resto.name}</a> </h4>
-        <p class="resto__description">${resto.description}</p>
+        <div class="resto__city">${restaurant.city}</div>
+        <h4 class="resto__name"> <a href="#">${restaurant.name}</a> </h4>
+        <p class="resto__description">${restaurant.description}</p>
       </div>
     `;
 
-      restoListElement.appendChild(restoItemELement);
+      restaurantListElement.appendChild(restaurantItemElement);
     });
   }
-
-  const sortButton = document.querySelector("#sort");
-  sortButton.addEventListener("change", function () {
-    if (this.value == "alphabet-asc") {
-      restaurant = DataSource.sortRestaurantByName("asc");
-      console.log(restaurant);
-      renderRestoItem();
-    } else if (this.value == "alphabet-desc") {
-      restaurant = DataSource.sortRestaurantByName("desc");
-      console.log(restaurant);
-      renderRestoItem();
-    } else if (this.value == "rating-asc") {
-      restaurant = DataSource.sortRestaurantByRating("asc");
-      console.log(restaurant);
-      renderRestoItem();
-    } else if (this.value == "rating-desc") {
-      restaurant = DataSource.sortRestaurantByRating("desc");
-      console.log(restaurant);
-      renderRestoItem();
-    } else {
-      restaurant = DataSource.getAllRestaurant();
-      console.log(restaurant);
-      renderRestoItem();
-    }
-  });
-
   renderRestoItem();
+
+  const sortElement = document.querySelector("#sort");
+  const sortRestaurant = function () {
+    switch (this.value) {
+      case 'alphabet-asc':
+        restaurants = DataSource.sortRestaurantByName("asc");
+        break;
+      case 'alphabet-desc':
+        restaurants = DataSource.sortRestaurantByName("desc");
+        break;
+      case 'rating-asc':
+        restaurants = DataSource.sortRestaurantByRating("asc");
+        break;
+      case 'rating-desc':
+        restaurants = DataSource.sortRestaurantByRating("desc");
+        break;
+      default:
+        restaurants = DataSource.getAllRestaurant();
+        break;
+    }
+  }
+  sortElement.addEventListener("change", sortRestaurant);
 };
 
 export default main;
