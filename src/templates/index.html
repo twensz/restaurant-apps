@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The best restaurant that you can visit">
-    <title>Resto Point</title>
+    <title>restaurant Point</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -18,7 +18,7 @@
 
     <header class="app-bar">
       <div class="app-bar__inner">
-        <h1 class="app-bar__brand"><a href="/"><i class="fa-solid fa-utensils"></i> Resto Point</a></h1>
+        <h1 class="app-bar__brand"><a href="/"><i class="fa-solid fa-utensils"></i> restaurant Point</a></h1>
 
         <button id="menu" class="app-bar__menu">☰</button>
         <nav class="nav">
@@ -33,27 +33,16 @@
 
     <div class="hero">
       <div class="hero__inner">
-        <h2 class="hero__title">Menampilkan restoran terbaik di penjuru indonesia</h2>
+        <h2 class="hero__title">Menampilkan restaurant terbaik di penjuru indonesia</h2>
       </div>
     </div>
 
-    <main id="main">
-      <section class="resto">
-        <div class="resto__inner">
-          <h3 class="resto__title">All Restaurant</h3>
-          <div class="sort">
-            <div class="sort__inner">
-              <span class="sort__title">Sort by</span>
-              <select class="sort__input" id="sort">
-                <option class="sort__option" value="default">Default</option>
-                <option class="sort__option" value="alphabet-asc">Alphabet (A - Z)</option>
-                <option class="sort__option" value="alphabet-desc">Alphabet (Z - A)</option>
-                <option class="sort__option" value="rating-asc">Rating (High to Low)</option>
-                <option class="sort__option" value="rating-desc">Rating (Low to High)</option>
-              </select>
-            </div>
-          </div>
-          <div class="resto__list"></div>
+    <main id="content">
+      <section class="restaurant">
+        <div class="restaurant__inner">
+          <h3 class="restaurant__title">All Restaurant</h3>
+          <sort-restaurant></sort-restaurant>
+          <restaurant-list></restaurant-list>
         </div>
       </section>
 
@@ -101,7 +90,7 @@
 
     <footer class="footer">
       <div class="footer__inner">
-        <p>Copyright © 2022 - Resto Point</p>
+        <p>Copyright © 2022 - restaurant Point</p>
         <button type="button" class="back-to-top"> <span>&#8593</span> Back to top</button>
       </div>
     </footer>

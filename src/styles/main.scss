@@ -130,7 +130,7 @@ button, a {
 /* 
  *  MAIN
 */
-main {
+#content {
   padding: 70px 0;
 }
 
@@ -148,37 +148,37 @@ main {
   }
 }
 
-.resto {
+.restaurant {
   margin-bottom: 80px;
 
-  .resto__inner {
+  .restaurant__inner {
     width: 90%;
     margin: auto;
   }
-  .resto__title {
+  .restaurant__title {
     font-size: 1.3rem;
     margin-bottom: 15px;
   }
-  .resto__list {
+  .restaurant__list {
     display: grid;
     gap: 25px 15px;
   }
-  .resto__item {
+  .restaurant__item {
     position: relative;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
   }
-  .resto__picture {
+  .restaurant__picture {
     width: 100%;
     max-height: 250px;
     object-fit: cover;
   }
-  .resto__info {
+  .restaurant__info {
     padding: 1.5rem 1.3rem;
     padding-bottom: 2.2rem;
   }
-  .resto__city {
+  .restaurant__city {
     position: absolute;
     top: 15px;
     left: 0;
@@ -187,22 +187,28 @@ main {
     padding: 5px 15px;
     border-radius: 0 3px 3px 0;
   }
-  .resto__star {
+  .restaurant__star {
     font-size: 1rem;
     margin-bottom: 5px;
   }
-  .resto__star i {
+  .restaurant__star i {
     color: #c6cc14;
     margin-right: 7px;
   }
-  .resto__name a {
+  .restaurant__name a {
     font-size: 1.2rem;
     margin-bottom: 5px;
   }
-  .resto__name a:hover {
+  .restaurant__name a:hover {
     opacity: 0.8;
   }
-  .resto__description {
+  .restaurant__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5; 
+    -webkit-box-orient: vertical;
     padding-right: 20px;
     font-size: 0.85rem;
     line-height: 1.4rem;
@@ -297,7 +303,7 @@ main {
   }
 }
 @media screen and (min-width: 600px) {
-  .resto__list {
+  .restaurant__list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -343,7 +349,7 @@ main {
     transform: rotate(90deg);
   }
 
-  .resto__description {
+  .restaurant__description {
     font-size: 0.85rem;
   }
 }
@@ -374,7 +380,7 @@ main {
   }
 }
 @media screen and (min-width: 1200px) {
-  .resto__list {
+  .restaurant__list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
