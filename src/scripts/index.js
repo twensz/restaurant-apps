@@ -1,15 +1,19 @@
-import 'regenerator-runtime'; /* for async await transpile */
+import 'regenerator-runtime';
 import '../styles/main.scss';
+import swRegister from './utils/swRegister';
 import App from './view/app';
-// import UrlParser from './routes/url-parser';
-import main from './view/main';
 
 const app = new App({
+  button: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
   content: document.querySelector('#content'),
+});
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
 });
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
-
-document.addEventListener('DOMContentLoaded', main);

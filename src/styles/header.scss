@@ -1,0 +1,33 @@
+.app-bar {
+  .app-bar__inner {
+    width: 90%;
+    margin: auto;
+    padding: 25px 0;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .app-bar__brand a {
+    color: $color-1;
+    font-size: 1.7rem;
+    i { margin-right: 12px; }
+    &:hover { opacity: unset; }
+  }
+  .app-bar__hamburger {
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+}
+
+.app-bar__navigation {
+  display: none;
+}
+.app-bar__navigation__list {
+  display: flex;
+  column-gap: 50px;
+  list-style-type: none;
+}
+.app-bar__navigation__item a {
+  justify-content: center;
+}

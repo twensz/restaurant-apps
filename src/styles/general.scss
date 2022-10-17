@@ -1,0 +1,53 @@
+$font-1: "Montserrat", sans-serif;
+$font-2: "ABeeZee", sans-serif;
+$color-1: #1e5128;
+$color-2: #fafafa; 
+$color-3: #444;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-2;
+  color: $color-3;
+  font-family: $font-2;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-1;
+  font-weight: 600;
+}
+
+button, input, a {
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+button, a {
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
