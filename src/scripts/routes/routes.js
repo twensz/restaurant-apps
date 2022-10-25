@@ -6,9 +6,6 @@ const routes = {
   '/': Home,
   '/favorites': Favorites,
   '/detail/:id': Detail,
-  '/detail/:id/description': Detail,
-  '/detail/:id/menu': Detail,
-  '/detail/:id/review': Detail,
 };
 
 export default routes;

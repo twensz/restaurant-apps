@@ -24,6 +24,7 @@
       transform: translate(300px, 0);
       opacity: 0;
       transition: transform 0.3s, opacity 1s;
+      z-index: 9;
     }
     .app-bar__navigation__list {
       flex-direction: column;
@@ -61,10 +62,27 @@
   restaurant-list {
     grid-template-columns: repeat(2, 1fr);
   }
+  .restaurant-detail .restaurant-detail__header .restaurant-detail__header__address {
+    display: inline;
+    margin-top: 0;
+  }
+  .restaurant-detail__menus {
+    grid-template-columns: 1fr 1fr;
+    h3 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+  .restaurant-detail__reviews .restaurant-detail__review-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (min-width: 1200px) {
   restaurant-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .restaurant-detail__reviews .restaurant-detail__review-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }

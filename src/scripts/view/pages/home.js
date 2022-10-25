@@ -13,7 +13,6 @@ const Home = {
     
     <div class="content__inner">
       <h3 class="content__heading">All Restaurant</h3>
-      <restaurant-sort-input></restaurant-sort-input>
       <restaurant-list></restaurant-list>
     </div>
     `;

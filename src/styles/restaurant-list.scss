@@ -3,24 +3,26 @@ restaurant-list {
   gap: 25px 15px;
   padding: 30px 0;
   margin-bottom: 20px;
+  height: 100%;
 }
 
-restaurant-item {
+.restaurant-item {
   position: relative;
+  height: 100%;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
 
-  .restaurant__picture {
+  .restaurant-item__picture {
     width: 100%;
     max-height: 250px;
     object-fit: cover;
   }
-  .restaurant__info {
+  .restaurant-item__info {
     padding: 1.5rem 1.3rem;
     padding-bottom: 2.2rem;
   }
-  .restaurant__city {
+  .restaurant-item__city {
     position: absolute;
     top: 15px;
     left: 0;
@@ -29,22 +31,22 @@ restaurant-item {
     padding: 5px 15px;
     border-radius: 0 3px 3px 0;
   }
-  .restaurant__star {
+  .restaurant-item__star {
     font-size: 1rem;
     margin-bottom: 5px;
   }
-  .restaurant__star i {
+  .restaurant-item__star i {
     color: #c6cc14;
     margin-right: 7px;
   }
-  .restaurant__name a {
+  .restaurant-item__name a {
     font-size: 1.2rem;
     margin-bottom: 5px;
   }
-  .restaurant__name a:hover {
+  .restaurant-item__name a:hover {
     opacity: 0.8;
   }
-  .restaurant__description {
+  .restaurant-item__description {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -54,5 +56,22 @@ restaurant-item {
     padding-right: 20px;
     font-size: 0.85rem;
     line-height: 1.4rem;
+  }
+}
+
+.restaurant-is-empty {
+  grid-column: 1/4;
+  text-align: center;
+  color: $color-3;
+  opacity: .7;
+  padding: 35px 0;
+
+  i {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 }

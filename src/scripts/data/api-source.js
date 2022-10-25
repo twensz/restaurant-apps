@@ -11,13 +11,38 @@ async function getRestaurants() {
 }
 
 async function getRestaurant(id) {
-  const response = await fetch(`${BASE_URL}/detail/${id}`);
-  const responseJson = await response.json();
+  try {
+    const response = await fetch(`${BASE_URL}/detail/${id}`);
+    const responseJson = await response.json();
 
-  if (responseJson.error) {
-    return { error: true, data: null };
+    if (responseJson.error) {
+      return { error: true, status: 'success', data: null };
+    }
+    return { error: false, status: 'success', data: responseJson.restaurant };
+  } catch (error) {
+    return { status: 'failed' };
   }
-  return { error: false, data: responseJson.restaurant };
 }
 
-export { getRestaurants, getRestaurant };
+async function addRestaurantReview({ id, name, review }) {
+  try {
+    const response = await fetch(`${BASE_URL}/review`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id, name, review }),
+    });
+    const responseJson = await response.json();
+    console.log(responseJson);
+
+    if (responseJson.error) {
+      return { error: true, status: 'success' };
+    }
+    return { error: false, status: 'success' };
+  } catch (error) {
+    return { status: 'failed' };
+  }
+}
+
+export { getRestaurants, getRestaurant, addRestaurantReview };
