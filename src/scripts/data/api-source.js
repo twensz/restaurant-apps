@@ -34,7 +34,6 @@ async function addRestaurantReview({ id, name, review }) {
       body: JSON.stringify({ id, name, review }),
     });
     const responseJson = await response.json();
-    console.log(responseJson);
 
     if (responseJson.error) {
       return { error: true, status: 'success' };
