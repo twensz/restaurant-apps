@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js",
+    "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "build-serve": "webpack --config webpack.prod.js && http-server dist",
     "serve": "http-server dist",
     "test": "karma start"
   },
@@ -40,11 +41,15 @@
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
     "whatwg-fetch": "^3.6.2",
+    "workbox-precaching": "^6.5.4",
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "idb": "^7.1.0",
     "regenerator-runtime": "^0.13.9",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
     "workbox-window": "^6.5.4"
   }
 }

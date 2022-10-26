@@ -7,6 +7,8 @@ const app = new App({
   button: document.querySelector('#hamburgerButton'),
   drawer: document.querySelector('#navigationDrawer'),
   content: document.querySelector('#content'),
+  loader: document.querySelector('.loader-container'),
+  backToTopButton: document.querySelector('#backToTopButton'),
 });
 
 window.addEventListener('hashchange', () => {
@@ -14,6 +16,6 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-  app.renderPage();
   swRegister();
+  app.renderPage();
 });

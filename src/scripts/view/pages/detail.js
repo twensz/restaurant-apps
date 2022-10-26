@@ -1,6 +1,7 @@
 import { getRestaurant } from '../../data/api-source';
 import UrlParser from '../../routes/url-parser';
 import '../../component/restaurant-detail';
+import { createCheckYourConnection } from '../templates/templates-creator';
 
 const Detail = {
   render() {
@@ -14,11 +15,16 @@ const Detail = {
   async afterRender() {
     const restaurantDetailElement = document.querySelector('restaurant-detail');
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const { error, data } = await getRestaurant(url.id);
+    const response = await getRestaurant(url.id);
 
-    if (!error) {
-      restaurantDetailElement.restaurant = data;
-      restaurantDetailElement.body = url.verb || null;
+    if (response.status === 'failed') {
+      document.querySelector('#content').classList.add('flex-centered');
+      document.querySelector('#content').innerHTML = createCheckYourConnection();
+      return;
+    }
+
+    if (!response.error) {
+      restaurantDetailElement.restaurant = response.data;
     }
   },
 };

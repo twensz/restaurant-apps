@@ -1,3 +1,4 @@
+import { createRestaurantIsEmpty } from '../view/templates/templates-creator';
 import './restaurant-item';
 
 class RestaurantList extends HTMLElement {
@@ -8,6 +9,11 @@ class RestaurantList extends HTMLElement {
 
   _render() {
     this.innerHTML = '';
+
+    if (this._restaurants.length <= 0) {
+      this.innerHTML = createRestaurantIsEmpty();
+      return;
+    }
 
     this._restaurants.forEach((restaurant) => {
       const restaurantItemElement = document.createElement('restaurant-item');
