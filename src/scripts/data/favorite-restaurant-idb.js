@@ -18,6 +18,10 @@ const FavoriteRestaurantIdb = {
     return { error: true, data: null };
   },
   async getRestaurant(id) {
+    if (!id) {
+      return { data: null };
+    }
+
     const response = await (await dbPromise).get(OBJECT_STORE_NAME, id);
     if (response) {
       return { error: false, data: response };
@@ -25,6 +29,9 @@ const FavoriteRestaurantIdb = {
     return { error: true, data: null };
   },
   async putRestaurant(restaurant) {
+    if (!restaurant.hasOwnProperty('id')) {
+      return;
+    }
     return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
   },
   async deleteRestaurant(id) {
