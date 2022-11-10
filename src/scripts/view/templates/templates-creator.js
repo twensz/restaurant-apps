@@ -1,4 +1,6 @@
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createLikeButton = () => `
   <button id="likeButton" aria-label="Like this restaurant">
@@ -16,7 +18,7 @@ const createLikedButton = () => `
 
 const createRestaurantItem = (restaurant) => `
   <article class="restaurant-item">
-    <img src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}" alt="Restaurant ${restaurant.name} yang berada di kota ${restaurant.city}" class="restaurant-item__picture" />
+    <img class="restaurant-item__picture lazyload" data-src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}" alt="Restaurant ${restaurant.name} yang berada di kota ${restaurant.city}" />
     <div class="restaurant-item__info">
       <div class="restaurant-item__star">
         <i class="fa-solid fa-star"></i>${restaurant.rating}
