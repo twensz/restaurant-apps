@@ -1,6 +1,7 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -23,6 +24,9 @@ module.exports = merge(common, {
     ],
   },
   optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
