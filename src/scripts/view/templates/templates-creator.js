@@ -42,7 +42,7 @@ const createSkeletonRestaurantItem = (count) => {
             <i class="fa-solid fa-star"></i>?
           </div>
           <div class="skeleton">Lorem</div>
-          <h4 class="skeleton"> <a href="#/detail/?">Lorem Ipsum</a> </h4>
+          <h4 class="skeleton">Lorem Ipsum</h4>
           <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aspernatur, assumenda aut consectetur consequuntur debitis deleniti dicta dolorem dolorum eos exercitationem labore laboriosam magni nihil, nobis obcaecati optio perspiciatis placeat qui recusandae saepe sapiente sequi totam ullam ut.</p>
         </div>
       </article>
