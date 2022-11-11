@@ -1,5 +1,6 @@
 import { addRestaurantReview } from '../data/api-source';
-import LikeButtonInitiator from '../utils/like-button-initiator';
+import LikeButtonPresenter from '../utils/like-button-presenter';
+import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 import { createRestaurantDetail } from '../view/templates/templates-creator';
 
 class RestaurantDetail extends HTMLElement {
@@ -11,9 +12,10 @@ class RestaurantDetail extends HTMLElement {
   async _render() {
     this.innerHTML = createRestaurantDetail(this._restaurant);
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: this.querySelector('.restaurant-detail__header__like-button-container'),
       restaurant: this._restaurant,
+      favoriteRestaurants: FavoriteRestaurantIdb,
     });
 
     this.querySelector('#restaurantAddReviewForm').addEventListener('submit', async (event) => {

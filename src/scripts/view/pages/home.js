@@ -1,6 +1,5 @@
 import { getRestaurants } from '../../data/api-source';
 import '../../component/restaurant-list';
-import '../../component/restaurant-sort-input';
 import { createSkeletonRestaurantItem } from '../templates/templates-creator';
 
 const Home = {
