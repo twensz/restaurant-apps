@@ -18,7 +18,7 @@ const createLikedButton = () => `
 
 const createRestaurantItem = (restaurant) => `
   <article class="restaurant-item">
-    <img class="restaurant-item__picture lazyload" data-src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}" alt="Restaurant ${restaurant.name} yang berada di kota ${restaurant.city}" />
+    <img class="restaurant-item__picture lazyload" width="" data-src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}" alt="Restaurant ${restaurant.name} yang berada di kota ${restaurant.city}" />
     <div class="restaurant-item__info">
       <div class="restaurant-item__star">
         <i class="fa-solid fa-star"></i>${restaurant.rating}
