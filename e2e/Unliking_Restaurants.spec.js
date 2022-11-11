@@ -1,7 +1,7 @@
 Feature('Unliking Restaurants');
 
 Before(async ({ I }) => {
-  I.amOnPage('');
+  I.amOnPage('/');
 
   I.waitForElement('.restaurant-item__name a', 10);
   I.seeElement('.restaurant-item__name a');
@@ -12,7 +12,7 @@ Before(async ({ I }) => {
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
-  I.amOnPage('#/favorites');
+  I.amOnPage('/#/favorites');
 });
 
 Scenario('showing liked restaurants', ({ I }) => {
@@ -29,7 +29,8 @@ Scenario('unliking one restaurant', async ({ I }) => {
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
-  I.amOnPage('#/favorites');
+  I.amOnPage('/#/favorites');
+  I.waitForElement('.restaurant-is-empty');
   I.seeElement('.restaurant-is-empty');
   I.see('Nothing to see here :(', 'p');
 });
