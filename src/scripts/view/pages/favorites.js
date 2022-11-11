@@ -1,6 +1,5 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import '../../component/restaurant-list';
-import '../../component/restaurant-sort-input';
 
 const Favorites = {
   render() {

@@ -7,7 +7,8 @@ const Detail = {
   render() {
     return `
     <div class="content__inner">
-      <restaurant-detail></restaurant-detail>
+      <restaurant-detail>
+      </restaurant-detail>
     </div>
     `;
   },

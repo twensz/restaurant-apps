@@ -1,6 +1,6 @@
 import { getRestaurants } from '../../data/api-source';
 import '../../component/restaurant-list';
-import '../../component/restaurant-sort-input';
+import { createSkeletonRestaurantItem } from '../templates/templates-creator';
 
 const Home = {
   render() {
@@ -13,7 +13,9 @@ const Home = {
     
     <div class="content__inner">
       <h3 class="content__heading">All Restaurant</h3>
-      <restaurant-list></restaurant-list>
+      <restaurant-list>
+        ${createSkeletonRestaurantItem(10)}
+      </restaurant-list>
     </div>
     `;
   },

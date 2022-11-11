@@ -30,6 +30,27 @@ const createRestaurantItem = (restaurant) => `
   </article>
 `;
 
+const createSkeletonRestaurantItem = (count) => {
+  let template = '';
+
+  for (let i = 0; i < count; i += 1) {
+    template += `
+      <article class="restaurant-item">
+        <img class="restaurant-item__picture" width="100%" height="350px" src="./images/placeholder.png" alt="skeleton" />
+        <div class="restaurant-item__info">
+          <div class="skeleton">
+            <i class="fa-solid fa-star"></i>?
+          </div>
+          <div class="skeleton">Lorem</div>
+          <h4 class="skeleton"> <a href="#/detail/?">Lorem Ipsum</a> </h4>
+          <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aspernatur, assumenda aut consectetur consequuntur debitis deleniti dicta dolorem dolorum eos exercitationem labore laboriosam magni nihil, nobis obcaecati optio perspiciatis placeat qui recusandae saepe sapiente sequi totam ullam ut.</p>
+        </div>
+      </article>
+  `;
+  }
+  return template;
+};
+
 const createRestaurantDetail = (restaurant) => `
   <article class="restaurant-detail">
   <img src="${CONFIG.BASE_IMAGE_URL}/large/${restaurant.pictureId}" alt="Restaurant ${restaurant.name} yang berada di kota ${restaurant.city}" class="restaurant-detail__picture" />
@@ -120,6 +141,7 @@ export {
   createRestaurantItem,
   createRestaurantDetail,
   createRestaurantIsEmpty,
+  createSkeletonRestaurantItem,
   createLoading,
   createCheckYourConnection,
 };
