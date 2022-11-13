@@ -10,7 +10,6 @@
       transition: 0.3s;
     }
     .app-bar__navigation {
-      display: block;
       color: $color-2;
       background-color: $color-1;
       border-radius: 3px;
@@ -42,10 +41,6 @@
       transform: rotate(90deg);
     }
   }
-
-  // .hero .hero__inner {
-  //   max-height: 100;
-  // }
 
   .footer__inner {
     flex-direction: column;
